@@ -16,9 +16,9 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node-tolga .
-  - docker tag simple-node-tolga tbesiktasli/simple-node-tolga:latest
+  - docker tag simple-node-tolga tolgabesiktasli/simple-node-tolga:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tbesiktasli/simple-node-tolga
+  - docker push tolgabesiktasli/simple-node-tolga
